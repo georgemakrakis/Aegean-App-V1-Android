@@ -83,16 +83,21 @@ public class icsd_page extends ActionBarActivity {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
         startActivity(browserIntent);
     }
+    public void MscClick(View v)
+    {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.msc.icsd.aegean.gr"));
+        startActivity(browserIntent);
+    }
     public void scheduleClick(View v)
     {
         AssetManager assetManager = getAssets();//access to assets folder
 
         InputStream in = null;
         OutputStream out = null;
-        File file = new File(getFilesDir(), "icsd_schedule.pdf");//gets directory
+        File file = new File(getFilesDir(), "icsd_Schedule.pdf");//gets directory
         try
         {
-            in = assetManager.open("icsd_schedule.pdf");
+            in = assetManager.open("icsd_Schedule.pdf");
             out = openFileOutput(file.getName(), Context.MODE_WORLD_READABLE);
 
             copyFile(in, out);//copies file to the output
@@ -106,7 +111,7 @@ public class icsd_page extends ActionBarActivity {
         }
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.parse("file://" + getFilesDir() + "/icsd_schedule.pdf"), "application/pdf");
+        intent.setDataAndType(Uri.parse("file://" + getFilesDir() + "/icsd_Schedule.pdf"), "application/pdf");
 
         startActivity(intent);//starts pdf viewer
     }

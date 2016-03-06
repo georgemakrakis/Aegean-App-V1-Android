@@ -14,13 +14,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class math_page extends AppCompatActivity {
+public class saxm_page extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_math_page);
+        setContentView(R.layout.activity_saxm_page);
     }
     private void copyFile(InputStream in, OutputStream out) throws IOException//taken from http://stackoverflow.com/questions/12889608/how-to-open-pdf-file-in-android-from-the-assets-folder?lq=1
     {
@@ -38,7 +37,7 @@ public class math_page extends AppCompatActivity {
     }
     public void icarusClick(View v)
     {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://myria.math.aegean.gr/sef/"));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.samos.aegean.gr/st/"));
         startActivity(browserIntent);
     }
     public void mailClick(View v)
@@ -53,7 +52,7 @@ public class math_page extends AppCompatActivity {
     }
     public void startPageClick(View v)
     {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.math.aegean.gr/in/"));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.actuar.aegean.gr"));
         startActivity(browserIntent);
     }
     public void searchPageClick(View v)
@@ -63,7 +62,7 @@ public class math_page extends AppCompatActivity {
     }
     public void MscClick(View v)
     {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.msc.math.aegean.gr/pms/index.html"));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.actuar.aegean.gr/postgraduate.html"));
         startActivity(browserIntent);
     }
     public void scheduleClick(View v)
@@ -72,10 +71,10 @@ public class math_page extends AppCompatActivity {
 
         InputStream in = null;
         OutputStream out = null;
-        File file = new File(getFilesDir(), "math_Schedule.pdf");//gets directory
+        File file = new File(getFilesDir(), "saxm_Schedule.pdf");//gets directory
         try
         {
-            in = assetManager.open("math_Schedule.pdf");
+            in = assetManager.open("saxm_Schedule.pdf");
             out = openFileOutput(file.getName(), Context.MODE_WORLD_READABLE);
 
             copyFile(in, out);//copies file to the output
@@ -84,17 +83,13 @@ public class math_page extends AppCompatActivity {
             out.flush();
             out.close();
             out=null;
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             Log.e("tag", e.getMessage());
         }
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.parse("file://" + getFilesDir() + "/math_Schedule.pdf"), "application/pdf");
+        intent.setDataAndType(Uri.parse("file://" + getFilesDir() + "/saxm_Schedule.pdf"), "application/pdf");
 
         startActivity(intent);//starts pdf viewer
     }
-
-
 }

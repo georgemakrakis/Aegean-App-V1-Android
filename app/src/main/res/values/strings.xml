@@ -20,4 +20,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_proti_ebdomada_mesimeri">proti_ebdomada_mesimeri</string>
+    <string name="title_activity_saxm_page">saxm_page</string>
+    <string name="title_activity_math_page">math_page</string>
 </resources>

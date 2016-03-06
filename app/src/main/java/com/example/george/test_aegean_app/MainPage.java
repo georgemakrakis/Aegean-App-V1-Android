@@ -10,6 +10,8 @@ import android.view.View;
 
 public class MainPage extends ActionBarActivity {
 
+    private View v;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,16 @@ public class MainPage extends ActionBarActivity {
     {
         Intent s = new Intent(this, Sitisi.class);
         startActivity(s);
+    }
+    public void saxmOnClick(View v)
+    {
+        Intent i = new Intent(this, saxm_page.class);
+        startActivity(i);
+    }
+    public void mathOnClick(View v)
+    {
+        Intent i = new Intent(this, math_page.class);
+        startActivity(i);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
