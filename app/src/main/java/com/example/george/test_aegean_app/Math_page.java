@@ -17,10 +17,9 @@ import java.io.OutputStream;
 public class math_page extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_math_page);
+        setContentView(R.layout.activity_math_page2);
     }
     private void copyFile(InputStream in, OutputStream out) throws IOException//taken from http://stackoverflow.com/questions/12889608/how-to-open-pdf-file-in-android-from-the-assets-folder?lq=1
     {
@@ -84,9 +83,7 @@ public class math_page extends AppCompatActivity {
             out.flush();
             out.close();
             out=null;
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             Log.e("tag", e.getMessage());
         }
 
@@ -95,6 +92,4 @@ public class math_page extends AppCompatActivity {
 
         startActivity(intent);//starts pdf viewer
     }
-
-
 }
